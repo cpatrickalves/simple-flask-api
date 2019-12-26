@@ -71,6 +71,32 @@ def api_filter():
 
     return jsonify(results)
 
+@app.route('/api/v2/resources/books', methods=['POST'])
+def add_book():
+    
+    # Receives the data in JSON format in a HTTP POST request
+    if not request.is_json:
+        return "<p>The content isn't of type JSON<\p>"
+
+    content = request.get_json()
+    title = content.get('title')
+    author = content.get('author')
+    published = content.get('published')
+    first_sentence = content.get('first_sentence')
+
+    # Save the data in db
+    db_path = os.path.join('db', 'books.db')    
+    conn = sqlite3.connect(db_path)
+    query = f'INSERT INTO books (title, author, published, first_sentence) \
+              VALUES ("{title}", "{author}", "{published}", "{first_sentence}");'
+
+    cur = conn.cursor()
+    cur.execute(query)
+    conn.commit()
+    
+    return jsonify(request.get_json())
+
+
 # A method that runs the application server.
 if __name__ == "__main__":
     app.run(debug=True)
