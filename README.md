@@ -24,3 +24,4 @@ Get books published in 2010
 
 ``` http://127.0.0.1:5000/api/v2/resources/books?published=2010```
 
+A running version of this API can be found [here](https://simpleflaskapi-cpatrickalves.herokuapp.com/).
