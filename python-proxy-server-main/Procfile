@@ -1,0 +1,1 @@
+worker: python ./src/server.py --max_conn=10 --buffer_size=8192
