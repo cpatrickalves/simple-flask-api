@@ -41,8 +41,6 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
-config.json
-wget-log
 .coverage
 .coverage.*
 .cache
@@ -76,6 +74,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# misc
+.DS_Store
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -93,12 +94,8 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
+# celery beat schedule file
 celerybeat-schedule
-celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
@@ -111,7 +108,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.vscode/
 
 # Spyder project settings
 .spyderproject
